@@ -1,51 +1,56 @@
-const music = document.getElementById("music");
-let playing = false;
+// ===========================================
+// 1️⃣ NAVIGASI PAGE
+// ===========================================
+function showPage(pageId) {
+  document.querySelectorAll("section").forEach(sec => {
+    sec.style.display = "none"; // sembunyikan semua page
+  });
+  document.getElementById(pageId).style.display = "block"; // tampilkan page yg dipilih
+}
 
-function playMusic() {
-  if (!playing) {
-    music.play();
-    playing = true;
+// tampilkan page pertama saat web load
+showPage("page1");
+
+// ===========================================
+// 2️⃣ VIEW PHOTO MODAL (PAGE 3)
+// ===========================================
+function viewPhoto(src) {
+  const modal = document.getElementById('photoModal');
+  const modalImg = document.getElementById('modalImg');
+  modalImg.src = src;
+  modal.style.display = 'flex';
+}
+
+function closeModal() {
+  document.getElementById('photoModal').style.display = 'none';
+}
+
+// ===========================================
+// 3️⃣ YES / NO INTERAKTIF (PAGE 4)
+// ===========================================
+function handleYesNo(answer) {
+  const yesBtn = document.getElementById('yesBtn');
+  const message = document.getElementById('finalMessage');
+
+  if(answer === 'no') {
+    // tombol yes membesar
+    yesBtn.style.transition = 'all 0.5s ease';
+    yesBtn.style.width = '100vw';
+    yesBtn.style.height = '100vh';
+    yesBtn.style.fontSize = '2em';
+  } else if(answer === 'yes') {
+    message.innerText = "aku tau kok kalo kamu masih sayang aku 💙 selesai.";
   }
 }
 
-function goPage(n) {
-  document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
-  document.getElementById("page" + n).classList.add("active");
-}
-
-function flowerRain() {
-  const f = document.createElement("div");
-  f.className = "flower";
-  f.innerHTML = "❀";
-  f.style.left = Math.random() * 100 + "vw";
-  f.style.animationDuration = (Math.random() * 3 + 4) + "s";
-  document.body.appendChild(f);
-  setTimeout(() => f.remove(), 7000);
-}
-setInterval(flowerRain, 400);
-
-/* FOTO */
-function viewPhoto(img) {
-  document.getElementById("modal").style.display = "flex";
-  document.getElementById("modalImg").src = img.src;
-}
-function closeModal() {
-  document.getElementById("modal").style.display = "none";
-}
-
-/* YES / NO */
-function growYes() {
-  const yes = document.getElementById("yesBtn");
-  yes.style.position = "fixed";
-  yes.style.top = "50%";
-  yes.style.left = "50%";
-  yes.style.transform = "translate(-50%, -50%) scale(4)";
-}
-
-function yesClicked() {
-  document.body.innerHTML = `
-    <div class="page active">
-      <h1>aku tau kok kalo kamu masih sayang aku 💙</h1>
-    </div>
-  `;
+// ===========================================
+// 4️⃣ MUSIC PLAY
+// ===========================================
+let musicStarted = false;
+function playMusic() {
+  if(!musicStarted) {
+    const audio = document.getElementById('bgMusic');
+    audio.play();
+    musicStarted = true;
+  }
 }
