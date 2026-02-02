@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>For You 💙</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<audio id="music">
+  <source src="always.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PAGE 1 -->
+<section id="page1" class="page active">
+  <h1>this one for you my baby</h1>
+  <div class="buttons">
+    <img src="img/icon-gift.png" onclick="goPage(2)">
+    <img src="img/icon-play.png" onclick="playMusic()">
+  </div>
+</section>
+
+<!-- PAGE 2 -->
+<section id="page2" class="page">
+  <h1>choose one 💙</h1>
+  <div class="buttons">
+    <img src="img/icon-1.png" onclick="goPage(3)">
+    <img src="img/icon-2.png" onclick="goPage(4)">
+  </div>
+</section>
+
+<!-- PAGE 3 -->
+<section id="page3" class="page">
+  <div class="photos">
+    <img src="img/photo1.jpg" onclick="viewPhoto(this)">
+    <img src="img/photo2.jpg" onclick="viewPhoto(this)">
+    <img src="img/photo3.jpg" onclick="viewPhoto(this)">
+    <img src="img/photo4.jpg" onclick="viewPhoto(this)">
+    <img src="img/photo5.jpg" onclick="viewPhoto(this)">
+  </div>
+  <button class="back" onclick="goPage(2)">⬅ Back</button>
+</section>
+
+<!-- PAGE 4 -->
+<section id="page4" class="page">
+  <div class="message">
+    <p>
+      Tiga tahun yang kita lalui bukan waktu yang singkat.  
+      Ada tawa, luka, rindu, dan banyak pelajaran yang membentuk aku hari ini.  
+      Aku minta maaf karena belum bisa menjadi dan memberikan yang terbaik untukmu.  
+      Aku berharap aku masih punya kesempatan untuk mendapatkan kamu lagi.  
+      Aku akan terus berjuang untuk kamu, dan aku janji tidak akan menyia-nyiakannya lagi.
+    </p>
+
+    <h3>kamu masih sayang aku ga?</h3>
+
+    <div class="choice">
+      <button id="yesBtn" onclick="yesClicked()">Yes</button>
+      <button id="noBtn" onclick="growYes()">No</button>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL FOTO -->
+<div id="modal" onclick="closeModal()">
+  <img id="modalImg">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
