@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b1d2a;
+  color: white;
+  overflow: hidden;
+}
+
+/* PAGE */
+.page {
+  display: none;
+  height: 100vh;
+  text-align: center;
+  padding-top: 80px;
+}
+
+.page.active {
+  display: block;
+}
+
+/* BUTTONS */
+.buttons img {
+  width: 90px;
+  margin: 20px;
+  cursor: pointer;
+  transition: transform .3s;
+}
+.buttons img:hover { transform: scale(1.15); }
+
+/* PAGE 3 */
+.photos img {
+  width: 140px;
+  margin: 15px;
+  animation: float 6s infinite ease-in-out;
+  cursor: pointer;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-25px); }
+  100% { transform: translateY(0); }
+}
+
+/* FLOWER */
+.flower {
+  position: fixed;
+  top: -20px;
+  color: #5dade2;
+  animation: fall linear infinite;
+}
+@keyframes fall {
+  to { transform: translateY(110vh); }
+}
+
+/* PAGE 4 */
+.message {
+  max-width: 650px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+.choice button {
+  padding: 12px 30px;
+  margin: 15px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+}
+
+#yesBtn { background: #3498db; color: white; }
+#noBtn { background: #555; color: white; }
+
+.back {
+  margin-top: 30px;
+  padding: 10px 25px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* MODAL */
+#modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.8);
+  justify-content: center;
+  align-items: center;
+}
+#modal img {
+  max-width: 80%;
+  border-radius: 10px;
+}
