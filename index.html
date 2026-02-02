@@ -30,16 +30,18 @@
 </section>
 
 <!-- PAGE 3 -->
-<section id="page3" class="page">
+<section id="page3">
+  <h2>our memories</h2>
+  
   <div class="photos">
-    <img src="img/photo1.jpg" onclick="viewPhoto(this)">
-    <img src="img/photo2.jpg" onclick="viewPhoto(this)">
-    <img src="img/photo3.jpg" onclick="viewPhoto(this)">
-    <img src="img/photo4.jpg" onclick="viewPhoto(this)">
-    <img src="img/photo5.jpg" onclick="viewPhoto(this)">
+    <img src="img/photo1.jpg" onclick="viewPhoto('img/photo1.jpg')">
+    <img src="img/photo2.jpg" onclick="viewPhoto('img/photo2.jpg')">
+    <img src="img/photo3.jpg" onclick="viewPhoto('img/photo3.jpg')">
+    <img src="img/photo4.jpg" onclick="viewPhoto('img/photo4.jpg')">
+    <img src="img/photo5.jpg" onclick="viewPhoto('img/photo5.jpg')">
   </div>
-  <button class="back" onclick="goPage(2)">⬅ Back</button>
 </section>
+
 
 <!-- PAGE 4 -->
 <section id="page4" class="page">
@@ -68,4 +70,9 @@
 
 <script src="script.js"></script>
 </body>
+  <div id="photoModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
+  <img id="modalImg" src="" style="max-width:90%; max-height:90%;">
+  <button onclick="closeModal()" style="position:absolute; top:20px; right:20px;">Back</button>
+</div>
+
 </html>
